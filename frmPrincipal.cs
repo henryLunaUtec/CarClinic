@@ -17,34 +17,6 @@ namespace ProyectoU
             InitializeComponent();
         }
 
-        private void btnClientes_Click(object sender, EventArgs e)
-        {
-            frmClientes formularioClientes = new frmClientes();
-            formularioClientes.MdiParent = this;
-            formularioClientes.Show();
-        }
-
-        private void btnVehiculos_Click(object sender, EventArgs e)
-        {
-            frmVehiculos formularioVehiculos = new frmVehiculos();
-            formularioVehiculos.MdiParent = this;
-            formularioVehiculos.Show();
-        }
-
-        private void btnOrdenes_Click(object sender, EventArgs e)
-        {
-            frmOrdenes formularioOrdenes = new frmOrdenes();
-            formularioOrdenes.MdiParent = this;
-            formularioOrdenes.Show();
-        }
-
-        private void btnInventario_Click(object sender, EventArgs e)
-        {
-            frmInventario formularioInventario = new frmInventario();
-            formularioInventario.MdiParent = this;
-            formularioInventario.Show();
-        }
-
         private void frmPrincipal_Load(object sender, EventArgs e)
         {
             openModalInPanel(new frmClientes());
