@@ -76,18 +76,42 @@ namespace ProyectoU
                 MessageBox.Show("Debe seleccionar un cliente para eliminar.");
                 return;
             }
-            if (MessageBox.Show("¿Está seguro de que desea eliminar este cliente?", "Confirmar eliminación",
-                MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
+
+            DataRowView filaActual = (DataRowView)this.clientesBindingSource.Current;
+            int clienteID = (int)filaActual["ClienteID"];
+
+            CarClinicBDDataSetTableAdapters.VehiculosTableAdapter vehiculosAdapter =
+                new CarClinicBDDataSetTableAdapters.VehiculosTableAdapter();
+
+            int conteoVehiculos = (int)vehiculosAdapter.GetVehiculoCountByClienteID(clienteID);
+
+            if (conteoVehiculos > 0)
             {
-                try
+                MessageBox.Show(
+                    "Este cliente no se puede eliminar porque tiene " + conteoVehiculos + " vehículo(s) registrado(s).\n" +
+                    "Por favor, elimine sus vehículos primero.",
+                    "Error de eliminación",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
+            }
+            else
+            {
+                if (MessageBox.Show("¿Está seguro de que desea eliminar este cliente?", "Confirmar eliminación",
+                    MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
                 {
-                    this.clientesBindingSource.RemoveCurrent();
-                    btnGuardar_Click(sender, e);
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("Error al eliminar: " + ex.Message);
-                    this.clientesTableAdapter.Fill(this.carClinicBDDataSet.Clientes);
+                    try
+                    {
+                        this.clientesBindingSource.RemoveCurrent();
+
+                        this.clientesTableAdapter.Update(this.carClinicBDDataSet.Clientes);
+                        this.clientesTableAdapter.Fill(this.carClinicBDDataSet.Clientes);
+                        MessageBox.Show("Cliente eliminado.");
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Error al eliminar: " + ex.Message);
+                        this.clientesTableAdapter.Fill(this.carClinicBDDataSet.Clientes);
+                    }
                 }
             }
         }
