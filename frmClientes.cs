@@ -43,7 +43,7 @@ namespace ProyectoU
             if (string.IsNullOrWhiteSpace(txtNombre.Text))
             {
                 MessageBox.Show("El nombre es obligatorio.");
-                txtNombre.Focus(); // Ponemos el cursor en el nombre
+                txtNombre.Focus();
                 return;
             }
             try
