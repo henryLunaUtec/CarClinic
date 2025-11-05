@@ -134,6 +134,8 @@
             // dgvInventario
             // 
             this.dgvInventario.AutoGenerateColumns = false;
+            this.dgvInventario.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvInventario.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCellsExceptHeaders;
             this.dgvInventario.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvInventario.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.repuestoIDDataGridViewTextBoxColumn,
@@ -145,7 +147,7 @@
             this.dgvInventario.Name = "dgvInventario";
             this.dgvInventario.RowHeadersWidth = 51;
             this.dgvInventario.RowTemplate.Height = 24;
-            this.dgvInventario.Size = new System.Drawing.Size(653, 130);
+            this.dgvInventario.Size = new System.Drawing.Size(1404, 130);
             this.dgvInventario.TabIndex = 8;
             // 
             // repuestoIDDataGridViewTextBoxColumn
@@ -155,7 +157,6 @@
             this.repuestoIDDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.repuestoIDDataGridViewTextBoxColumn.Name = "repuestoIDDataGridViewTextBoxColumn";
             this.repuestoIDDataGridViewTextBoxColumn.ReadOnly = true;
-            this.repuestoIDDataGridViewTextBoxColumn.Width = 125;
             // 
             // nombreRepuestoDataGridViewTextBoxColumn
             // 
@@ -163,7 +164,6 @@
             this.nombreRepuestoDataGridViewTextBoxColumn.HeaderText = "NombreRepuesto";
             this.nombreRepuestoDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.nombreRepuestoDataGridViewTextBoxColumn.Name = "nombreRepuestoDataGridViewTextBoxColumn";
-            this.nombreRepuestoDataGridViewTextBoxColumn.Width = 125;
             // 
             // precioDataGridViewTextBoxColumn
             // 
@@ -171,7 +171,6 @@
             this.precioDataGridViewTextBoxColumn.HeaderText = "Precio";
             this.precioDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.precioDataGridViewTextBoxColumn.Name = "precioDataGridViewTextBoxColumn";
-            this.precioDataGridViewTextBoxColumn.Width = 125;
             // 
             // stockDataGridViewTextBoxColumn
             // 
@@ -179,7 +178,6 @@
             this.stockDataGridViewTextBoxColumn.HeaderText = "Stock";
             this.stockDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.stockDataGridViewTextBoxColumn.Name = "stockDataGridViewTextBoxColumn";
-            this.stockDataGridViewTextBoxColumn.Width = 125;
             // 
             // inventarioTableAdapter
             // 
@@ -189,7 +187,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1525, 650);
             this.Controls.Add(this.dgvInventario);
             this.Controls.Add(this.btnNuevoRepuesto);
             this.Controls.Add(this.btnGuardarRepuesto);

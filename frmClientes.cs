@@ -120,5 +120,10 @@ namespace ProyectoU
         {
 
         }
+
+        private void dgvClientes_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

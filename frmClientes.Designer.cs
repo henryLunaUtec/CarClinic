@@ -189,6 +189,8 @@
             // dgvClientes
             // 
             this.dgvClientes.AutoGenerateColumns = false;
+            this.dgvClientes.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvClientes.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCellsExceptHeaders;
             this.dgvClientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvClientes.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.clienteIDDataGridViewTextBoxColumn,
@@ -201,8 +203,9 @@
             this.dgvClientes.Name = "dgvClientes";
             this.dgvClientes.RowHeadersWidth = 51;
             this.dgvClientes.RowTemplate.Height = 24;
-            this.dgvClientes.Size = new System.Drawing.Size(813, 181);
+            this.dgvClientes.Size = new System.Drawing.Size(1364, 181);
             this.dgvClientes.TabIndex = 11;
+            this.dgvClientes.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvClientes_CellContentClick);
             // 
             // clienteIDDataGridViewTextBoxColumn
             // 
@@ -211,7 +214,6 @@
             this.clienteIDDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.clienteIDDataGridViewTextBoxColumn.Name = "clienteIDDataGridViewTextBoxColumn";
             this.clienteIDDataGridViewTextBoxColumn.ReadOnly = true;
-            this.clienteIDDataGridViewTextBoxColumn.Width = 125;
             // 
             // nombreDataGridViewTextBoxColumn
             // 
@@ -219,7 +221,6 @@
             this.nombreDataGridViewTextBoxColumn.HeaderText = "Nombre";
             this.nombreDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.nombreDataGridViewTextBoxColumn.Name = "nombreDataGridViewTextBoxColumn";
-            this.nombreDataGridViewTextBoxColumn.Width = 125;
             // 
             // apellidoDataGridViewTextBoxColumn
             // 
@@ -227,7 +228,6 @@
             this.apellidoDataGridViewTextBoxColumn.HeaderText = "Apellido";
             this.apellidoDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.apellidoDataGridViewTextBoxColumn.Name = "apellidoDataGridViewTextBoxColumn";
-            this.apellidoDataGridViewTextBoxColumn.Width = 125;
             // 
             // telefonoDataGridViewTextBoxColumn
             // 
@@ -235,7 +235,6 @@
             this.telefonoDataGridViewTextBoxColumn.HeaderText = "Telefono";
             this.telefonoDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.telefonoDataGridViewTextBoxColumn.Name = "telefonoDataGridViewTextBoxColumn";
-            this.telefonoDataGridViewTextBoxColumn.Width = 125;
             // 
             // direccionDataGridViewTextBoxColumn
             // 
@@ -243,7 +242,6 @@
             this.direccionDataGridViewTextBoxColumn.HeaderText = "Direccion";
             this.direccionDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.direccionDataGridViewTextBoxColumn.Name = "direccionDataGridViewTextBoxColumn";
-            this.direccionDataGridViewTextBoxColumn.Width = 125;
             // 
             // clientesBindingSource
             // 
@@ -258,7 +256,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1127, 607);
+            this.ClientSize = new System.Drawing.Size(1525, 746);
             this.Controls.Add(this.dgvClientes);
             this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.btnGuardar);

@@ -187,6 +187,8 @@
             // dgvOrdenes
             // 
             this.dgvOrdenes.AutoGenerateColumns = false;
+            this.dgvOrdenes.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvOrdenes.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCellsExceptHeaders;
             this.dgvOrdenes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvOrdenes.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ordenIDDataGridViewTextBoxColumn,
@@ -199,7 +201,7 @@
             this.dgvOrdenes.Name = "dgvOrdenes";
             this.dgvOrdenes.RowHeadersWidth = 51;
             this.dgvOrdenes.RowTemplate.Height = 24;
-            this.dgvOrdenes.Size = new System.Drawing.Size(693, 157);
+            this.dgvOrdenes.Size = new System.Drawing.Size(1368, 157);
             this.dgvOrdenes.TabIndex = 9;
             this.dgvOrdenes.SelectionChanged += new System.EventHandler(this.dgvOrdenes_SelectionChanged);
             // 
@@ -210,7 +212,6 @@
             this.ordenIDDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.ordenIDDataGridViewTextBoxColumn.Name = "ordenIDDataGridViewTextBoxColumn";
             this.ordenIDDataGridViewTextBoxColumn.ReadOnly = true;
-            this.ordenIDDataGridViewTextBoxColumn.Width = 125;
             // 
             // fechaDataGridViewTextBoxColumn
             // 
@@ -218,7 +219,6 @@
             this.fechaDataGridViewTextBoxColumn.HeaderText = "Fecha";
             this.fechaDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.fechaDataGridViewTextBoxColumn.Name = "fechaDataGridViewTextBoxColumn";
-            this.fechaDataGridViewTextBoxColumn.Width = 125;
             // 
             // descripcionProblemaDataGridViewTextBoxColumn
             // 
@@ -226,7 +226,6 @@
             this.descripcionProblemaDataGridViewTextBoxColumn.HeaderText = "DescripcionProblema";
             this.descripcionProblemaDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.descripcionProblemaDataGridViewTextBoxColumn.Name = "descripcionProblemaDataGridViewTextBoxColumn";
-            this.descripcionProblemaDataGridViewTextBoxColumn.Width = 125;
             // 
             // estadoDataGridViewTextBoxColumn
             // 
@@ -234,7 +233,6 @@
             this.estadoDataGridViewTextBoxColumn.HeaderText = "Estado";
             this.estadoDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.estadoDataGridViewTextBoxColumn.Name = "estadoDataGridViewTextBoxColumn";
-            this.estadoDataGridViewTextBoxColumn.Width = 125;
             // 
             // vehiculoIDDataGridViewTextBoxColumn
             // 
@@ -242,7 +240,6 @@
             this.vehiculoIDDataGridViewTextBoxColumn.HeaderText = "VehiculoID";
             this.vehiculoIDDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.vehiculoIDDataGridViewTextBoxColumn.Name = "vehiculoIDDataGridViewTextBoxColumn";
-            this.vehiculoIDDataGridViewTextBoxColumn.Width = 125;
             // 
             // clientesTableAdapter
             // 
@@ -324,6 +321,8 @@
             // dgvDetalles
             // 
             this.dgvDetalles.AutoGenerateColumns = false;
+            this.dgvDetalles.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvDetalles.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCellsExceptHeaders;
             this.dgvDetalles.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvDetalles.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.detalleIDDataGridViewTextBoxColumn,
@@ -336,7 +335,7 @@
             this.dgvDetalles.Name = "dgvDetalles";
             this.dgvDetalles.RowHeadersWidth = 51;
             this.dgvDetalles.RowTemplate.Height = 24;
-            this.dgvDetalles.Size = new System.Drawing.Size(693, 149);
+            this.dgvDetalles.Size = new System.Drawing.Size(1368, 149);
             this.dgvDetalles.TabIndex = 11;
             // 
             // detalleIDDataGridViewTextBoxColumn
@@ -346,7 +345,6 @@
             this.detalleIDDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.detalleIDDataGridViewTextBoxColumn.Name = "detalleIDDataGridViewTextBoxColumn";
             this.detalleIDDataGridViewTextBoxColumn.ReadOnly = true;
-            this.detalleIDDataGridViewTextBoxColumn.Width = 125;
             // 
             // ordenIDDataGridViewTextBoxColumn1
             // 
@@ -354,7 +352,6 @@
             this.ordenIDDataGridViewTextBoxColumn1.HeaderText = "OrdenID";
             this.ordenIDDataGridViewTextBoxColumn1.MinimumWidth = 6;
             this.ordenIDDataGridViewTextBoxColumn1.Name = "ordenIDDataGridViewTextBoxColumn1";
-            this.ordenIDDataGridViewTextBoxColumn1.Width = 125;
             // 
             // repuestoIDDataGridViewTextBoxColumn
             // 
@@ -362,7 +359,6 @@
             this.repuestoIDDataGridViewTextBoxColumn.HeaderText = "RepuestoID";
             this.repuestoIDDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.repuestoIDDataGridViewTextBoxColumn.Name = "repuestoIDDataGridViewTextBoxColumn";
-            this.repuestoIDDataGridViewTextBoxColumn.Width = 125;
             // 
             // cantidadUsadaDataGridViewTextBoxColumn
             // 
@@ -370,7 +366,6 @@
             this.cantidadUsadaDataGridViewTextBoxColumn.HeaderText = "CantidadUsada";
             this.cantidadUsadaDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.cantidadUsadaDataGridViewTextBoxColumn.Name = "cantidadUsadaDataGridViewTextBoxColumn";
-            this.cantidadUsadaDataGridViewTextBoxColumn.Width = 125;
             // 
             // precioUnitarioDataGridViewTextBoxColumn
             // 
@@ -378,7 +373,6 @@
             this.precioUnitarioDataGridViewTextBoxColumn.HeaderText = "PrecioUnitario";
             this.precioUnitarioDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.precioUnitarioDataGridViewTextBoxColumn.Name = "precioUnitarioDataGridViewTextBoxColumn";
-            this.precioUnitarioDataGridViewTextBoxColumn.Width = 125;
             // 
             // detalleOrdenBindingSource
             // 
@@ -397,7 +391,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 797);
+            this.ClientSize = new System.Drawing.Size(1507, 797);
             this.Controls.Add(this.dgvDetalles);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.dgvOrdenes);

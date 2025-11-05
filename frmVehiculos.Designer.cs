@@ -175,6 +175,8 @@
             // dgvVehiculos
             // 
             this.dgvVehiculos.AutoGenerateColumns = false;
+            this.dgvVehiculos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvVehiculos.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCellsExceptHeaders;
             this.dgvVehiculos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvVehiculos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.vehiculoIDDataGridViewTextBoxColumn,
@@ -188,7 +190,7 @@
             this.dgvVehiculos.Name = "dgvVehiculos";
             this.dgvVehiculos.RowHeadersWidth = 51;
             this.dgvVehiculos.RowTemplate.Height = 24;
-            this.dgvVehiculos.Size = new System.Drawing.Size(798, 119);
+            this.dgvVehiculos.Size = new System.Drawing.Size(1431, 196);
             this.dgvVehiculos.TabIndex = 11;
             // 
             // vehiculoIDDataGridViewTextBoxColumn
@@ -198,7 +200,6 @@
             this.vehiculoIDDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.vehiculoIDDataGridViewTextBoxColumn.Name = "vehiculoIDDataGridViewTextBoxColumn";
             this.vehiculoIDDataGridViewTextBoxColumn.ReadOnly = true;
-            this.vehiculoIDDataGridViewTextBoxColumn.Width = 125;
             // 
             // placaDataGridViewTextBoxColumn
             // 
@@ -206,7 +207,6 @@
             this.placaDataGridViewTextBoxColumn.HeaderText = "Placa";
             this.placaDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.placaDataGridViewTextBoxColumn.Name = "placaDataGridViewTextBoxColumn";
-            this.placaDataGridViewTextBoxColumn.Width = 125;
             // 
             // mArcaDataGridViewTextBoxColumn
             // 
@@ -214,7 +214,6 @@
             this.mArcaDataGridViewTextBoxColumn.HeaderText = "MArca";
             this.mArcaDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.mArcaDataGridViewTextBoxColumn.Name = "mArcaDataGridViewTextBoxColumn";
-            this.mArcaDataGridViewTextBoxColumn.Width = 125;
             // 
             // modeloDataGridViewTextBoxColumn
             // 
@@ -222,7 +221,6 @@
             this.modeloDataGridViewTextBoxColumn.HeaderText = "Modelo";
             this.modeloDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.modeloDataGridViewTextBoxColumn.Name = "modeloDataGridViewTextBoxColumn";
-            this.modeloDataGridViewTextBoxColumn.Width = 125;
             // 
             // anoDataGridViewTextBoxColumn
             // 
@@ -230,7 +228,6 @@
             this.anoDataGridViewTextBoxColumn.HeaderText = "Ano";
             this.anoDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.anoDataGridViewTextBoxColumn.Name = "anoDataGridViewTextBoxColumn";
-            this.anoDataGridViewTextBoxColumn.Width = 125;
             // 
             // clienteIDDataGridViewTextBoxColumn
             // 
@@ -238,7 +235,6 @@
             this.clienteIDDataGridViewTextBoxColumn.HeaderText = "ClienteID";
             this.clienteIDDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.clienteIDDataGridViewTextBoxColumn.Name = "clienteIDDataGridViewTextBoxColumn";
-            this.clienteIDDataGridViewTextBoxColumn.Width = 125;
             // 
             // clientesTableAdapter
             // 
@@ -252,7 +248,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(937, 450);
+            this.ClientSize = new System.Drawing.Size(1538, 718);
             this.Controls.Add(this.dgvVehiculos);
             this.Controls.Add(this.btnGuardarVehiculo);
             this.Controls.Add(this.txtAno);
