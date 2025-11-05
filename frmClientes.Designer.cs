@@ -101,9 +101,10 @@
             // txtNombre
             // 
             this.txtNombre.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.clientesBindingSource1, "Nombre", true));
+            this.txtNombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNombre.Location = new System.Drawing.Point(210, 37);
             this.txtNombre.Name = "txtNombre";
-            this.txtNombre.Size = new System.Drawing.Size(100, 22);
+            this.txtNombre.Size = new System.Drawing.Size(244, 22);
             this.txtNombre.TabIndex = 4;
             this.txtNombre.TextChanged += new System.EventHandler(this.txtNombre_TextChanged);
             // 
@@ -122,7 +123,7 @@
             this.txtApellido.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.clientesBindingSource2, "Apellido", true));
             this.txtApellido.Location = new System.Drawing.Point(210, 92);
             this.txtApellido.Name = "txtApellido";
-            this.txtApellido.Size = new System.Drawing.Size(100, 22);
+            this.txtApellido.Size = new System.Drawing.Size(244, 22);
             this.txtApellido.TabIndex = 5;
             // 
             // clientesBindingSource2
@@ -135,7 +136,7 @@
             this.txtTelefono.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.clientesBindingSource3, "Telefono", true));
             this.txtTelefono.Location = new System.Drawing.Point(210, 143);
             this.txtTelefono.Name = "txtTelefono";
-            this.txtTelefono.Size = new System.Drawing.Size(100, 22);
+            this.txtTelefono.Size = new System.Drawing.Size(244, 22);
             this.txtTelefono.TabIndex = 6;
             // 
             // clientesBindingSource3
@@ -148,7 +149,7 @@
             this.txtDireccion.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.clientesBindingSource4, "Direccion", true));
             this.txtDireccion.Location = new System.Drawing.Point(210, 197);
             this.txtDireccion.Name = "txtDireccion";
-            this.txtDireccion.Size = new System.Drawing.Size(100, 22);
+            this.txtDireccion.Size = new System.Drawing.Size(244, 22);
             this.txtDireccion.TabIndex = 7;
             // 
             // clientesBindingSource4
@@ -160,7 +161,7 @@
             // 
             this.btnNuevo.Location = new System.Drawing.Point(101, 258);
             this.btnNuevo.Name = "btnNuevo";
-            this.btnNuevo.Size = new System.Drawing.Size(75, 23);
+            this.btnNuevo.Size = new System.Drawing.Size(106, 48);
             this.btnNuevo.TabIndex = 8;
             this.btnNuevo.Text = "Nuevo";
             this.btnNuevo.UseVisualStyleBackColor = true;
@@ -168,9 +169,9 @@
             // 
             // btnGuardar
             // 
-            this.btnGuardar.Location = new System.Drawing.Point(210, 258);
+            this.btnGuardar.Location = new System.Drawing.Point(243, 258);
             this.btnGuardar.Name = "btnGuardar";
-            this.btnGuardar.Size = new System.Drawing.Size(75, 23);
+            this.btnGuardar.Size = new System.Drawing.Size(106, 48);
             this.btnGuardar.TabIndex = 9;
             this.btnGuardar.Text = "Guardar";
             this.btnGuardar.UseVisualStyleBackColor = true;
@@ -178,9 +179,9 @@
             // 
             // btnEliminar
             // 
-            this.btnEliminar.Location = new System.Drawing.Point(325, 258);
+            this.btnEliminar.Location = new System.Drawing.Point(385, 258);
             this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.Size = new System.Drawing.Size(75, 23);
+            this.btnEliminar.Size = new System.Drawing.Size(106, 48);
             this.btnEliminar.TabIndex = 10;
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.UseVisualStyleBackColor = true;
@@ -199,7 +200,7 @@
             this.telefonoDataGridViewTextBoxColumn,
             this.direccionDataGridViewTextBoxColumn});
             this.dgvClientes.DataSource = this.clientesBindingSource;
-            this.dgvClientes.Location = new System.Drawing.Point(101, 322);
+            this.dgvClientes.Location = new System.Drawing.Point(101, 403);
             this.dgvClientes.Name = "dgvClientes";
             this.dgvClientes.RowHeadersWidth = 51;
             this.dgvClientes.RowTemplate.Height = 24;
@@ -256,7 +257,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1525, 746);
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.ClientSize = new System.Drawing.Size(1905, 1042);
             this.Controls.Add(this.dgvClientes);
             this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.btnGuardar);
@@ -269,6 +271,7 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
+            this.DoubleBuffered = true;
             this.Name = "frmClientes";
             this.Text = "frmClientes";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;

@@ -74,7 +74,7 @@
             this.cmbClientes.FormattingEnabled = true;
             this.cmbClientes.Location = new System.Drawing.Point(140, 37);
             this.cmbClientes.Name = "cmbClientes";
-            this.cmbClientes.Size = new System.Drawing.Size(121, 24);
+            this.cmbClientes.Size = new System.Drawing.Size(202, 24);
             this.cmbClientes.TabIndex = 1;
             this.cmbClientes.ValueMember = "ClienteID";
             this.cmbClientes.SelectedIndexChanged += new System.EventHandler(this.cmbClientes_SelectedIndexChanged);
@@ -130,7 +130,7 @@
             this.txtPlaca.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.vehiculosBindingSource, "Placa", true));
             this.txtPlaca.Location = new System.Drawing.Point(140, 102);
             this.txtPlaca.Name = "txtPlaca";
-            this.txtPlaca.Size = new System.Drawing.Size(121, 22);
+            this.txtPlaca.Size = new System.Drawing.Size(202, 22);
             this.txtPlaca.TabIndex = 6;
             // 
             // vehiculosBindingSource
@@ -143,7 +143,7 @@
             this.txtMarca.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.vehiculosBindingSource, "MArca", true));
             this.txtMarca.Location = new System.Drawing.Point(140, 161);
             this.txtMarca.Name = "txtMarca";
-            this.txtMarca.Size = new System.Drawing.Size(121, 22);
+            this.txtMarca.Size = new System.Drawing.Size(202, 22);
             this.txtMarca.TabIndex = 7;
             // 
             // txtModelo
@@ -151,7 +151,7 @@
             this.txtModelo.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.vehiculosBindingSource, "Modelo", true));
             this.txtModelo.Location = new System.Drawing.Point(140, 214);
             this.txtModelo.Name = "txtModelo";
-            this.txtModelo.Size = new System.Drawing.Size(121, 22);
+            this.txtModelo.Size = new System.Drawing.Size(202, 22);
             this.txtModelo.TabIndex = 8;
             // 
             // txtAno
@@ -159,12 +159,12 @@
             this.txtAno.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.vehiculosBindingSource, "Ano", true));
             this.txtAno.Location = new System.Drawing.Point(140, 258);
             this.txtAno.Name = "txtAno";
-            this.txtAno.Size = new System.Drawing.Size(121, 22);
+            this.txtAno.Size = new System.Drawing.Size(202, 22);
             this.txtAno.TabIndex = 9;
             // 
             // btnGuardarVehiculo
             // 
-            this.btnGuardarVehiculo.Location = new System.Drawing.Point(320, 37);
+            this.btnGuardarVehiculo.Location = new System.Drawing.Point(443, 233);
             this.btnGuardarVehiculo.Name = "btnGuardarVehiculo";
             this.btnGuardarVehiculo.Size = new System.Drawing.Size(157, 47);
             this.btnGuardarVehiculo.TabIndex = 10;
@@ -248,7 +248,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1538, 718);
+            this.ClientSize = new System.Drawing.Size(1905, 1042);
             this.Controls.Add(this.dgvVehiculos);
             this.Controls.Add(this.btnGuardarVehiculo);
             this.Controls.Add(this.txtAno);

@@ -82,7 +82,7 @@
             this.txtNombreRepuesto.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.inventarioBindingSource, "NombreRepuesto", true));
             this.txtNombreRepuesto.Location = new System.Drawing.Point(202, 30);
             this.txtNombreRepuesto.Name = "txtNombreRepuesto";
-            this.txtNombreRepuesto.Size = new System.Drawing.Size(124, 22);
+            this.txtNombreRepuesto.Size = new System.Drawing.Size(236, 22);
             this.txtNombreRepuesto.TabIndex = 3;
             // 
             // inventarioBindingSource
@@ -100,7 +100,7 @@
             this.txtPrecioRepuesto.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.inventarioBindingSource, "Precio", true));
             this.txtPrecioRepuesto.Location = new System.Drawing.Point(202, 75);
             this.txtPrecioRepuesto.Name = "txtPrecioRepuesto";
-            this.txtPrecioRepuesto.Size = new System.Drawing.Size(124, 22);
+            this.txtPrecioRepuesto.Size = new System.Drawing.Size(236, 22);
             this.txtPrecioRepuesto.TabIndex = 4;
             // 
             // txtStockRepuesto
@@ -108,14 +108,14 @@
             this.txtStockRepuesto.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.inventarioBindingSource, "Stock", true));
             this.txtStockRepuesto.Location = new System.Drawing.Point(202, 126);
             this.txtStockRepuesto.Name = "txtStockRepuesto";
-            this.txtStockRepuesto.Size = new System.Drawing.Size(124, 22);
+            this.txtStockRepuesto.Size = new System.Drawing.Size(236, 22);
             this.txtStockRepuesto.TabIndex = 5;
             // 
             // btnGuardarRepuesto
             // 
-            this.btnGuardarRepuesto.Location = new System.Drawing.Point(108, 196);
+            this.btnGuardarRepuesto.Location = new System.Drawing.Point(234, 187);
             this.btnGuardarRepuesto.Name = "btnGuardarRepuesto";
-            this.btnGuardarRepuesto.Size = new System.Drawing.Size(75, 23);
+            this.btnGuardarRepuesto.Size = new System.Drawing.Size(122, 41);
             this.btnGuardarRepuesto.TabIndex = 6;
             this.btnGuardarRepuesto.Text = "Guardar";
             this.btnGuardarRepuesto.UseVisualStyleBackColor = true;
@@ -123,9 +123,9 @@
             // 
             // btnNuevoRepuesto
             // 
-            this.btnNuevoRepuesto.Location = new System.Drawing.Point(222, 196);
+            this.btnNuevoRepuesto.Location = new System.Drawing.Point(70, 187);
             this.btnNuevoRepuesto.Name = "btnNuevoRepuesto";
-            this.btnNuevoRepuesto.Size = new System.Drawing.Size(75, 23);
+            this.btnNuevoRepuesto.Size = new System.Drawing.Size(122, 41);
             this.btnNuevoRepuesto.TabIndex = 7;
             this.btnNuevoRepuesto.Text = "Nuevo";
             this.btnNuevoRepuesto.UseVisualStyleBackColor = true;
@@ -187,7 +187,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1525, 650);
+            this.ClientSize = new System.Drawing.Size(1905, 1042);
             this.Controls.Add(this.dgvInventario);
             this.Controls.Add(this.btnNuevoRepuesto);
             this.Controls.Add(this.btnGuardarRepuesto);

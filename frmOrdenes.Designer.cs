@@ -104,7 +104,7 @@
             this.cmbClienteOrden.FormattingEnabled = true;
             this.cmbClienteOrden.Location = new System.Drawing.Point(137, 37);
             this.cmbClienteOrden.Name = "cmbClienteOrden";
-            this.cmbClienteOrden.Size = new System.Drawing.Size(121, 24);
+            this.cmbClienteOrden.Size = new System.Drawing.Size(255, 24);
             this.cmbClienteOrden.TabIndex = 2;
             this.cmbClienteOrden.ValueMember = "ClienteID";
             this.cmbClienteOrden.SelectedIndexChanged += new System.EventHandler(this.cmbClienteOrden_SelectedIndexChanged);
@@ -126,7 +126,7 @@
             this.cmbVehiculoOrden.FormattingEnabled = true;
             this.cmbVehiculoOrden.Location = new System.Drawing.Point(137, 97);
             this.cmbVehiculoOrden.Name = "cmbVehiculoOrden";
-            this.cmbVehiculoOrden.Size = new System.Drawing.Size(121, 24);
+            this.cmbVehiculoOrden.Size = new System.Drawing.Size(255, 24);
             this.cmbVehiculoOrden.TabIndex = 3;
             this.cmbVehiculoOrden.ValueMember = "VehiculoID";
             // 
@@ -269,7 +269,7 @@
             // 
             // btnAgregarRepuesto
             // 
-            this.btnAgregarRepuesto.Location = new System.Drawing.Point(286, 52);
+            this.btnAgregarRepuesto.Location = new System.Drawing.Point(439, 42);
             this.btnAgregarRepuesto.Name = "btnAgregarRepuesto";
             this.btnAgregarRepuesto.Size = new System.Drawing.Size(158, 44);
             this.btnAgregarRepuesto.TabIndex = 4;
@@ -281,7 +281,7 @@
             // 
             this.numCantidad.Location = new System.Drawing.Point(107, 89);
             this.numCantidad.Name = "numCantidad";
-            this.numCantidad.Size = new System.Drawing.Size(137, 22);
+            this.numCantidad.Size = new System.Drawing.Size(215, 22);
             this.numCantidad.TabIndex = 3;
             // 
             // label6
@@ -300,7 +300,7 @@
             this.cmbRepuestos.FormattingEnabled = true;
             this.cmbRepuestos.Location = new System.Drawing.Point(107, 38);
             this.cmbRepuestos.Name = "cmbRepuestos";
-            this.cmbRepuestos.Size = new System.Drawing.Size(137, 24);
+            this.cmbRepuestos.Size = new System.Drawing.Size(215, 24);
             this.cmbRepuestos.TabIndex = 1;
             this.cmbRepuestos.ValueMember = "RepuestoID";
             // 
@@ -322,7 +322,6 @@
             // 
             this.dgvDetalles.AutoGenerateColumns = false;
             this.dgvDetalles.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvDetalles.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCellsExceptHeaders;
             this.dgvDetalles.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvDetalles.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.detalleIDDataGridViewTextBoxColumn,
@@ -335,7 +334,7 @@
             this.dgvDetalles.Name = "dgvDetalles";
             this.dgvDetalles.RowHeadersWidth = 51;
             this.dgvDetalles.RowTemplate.Height = 24;
-            this.dgvDetalles.Size = new System.Drawing.Size(1368, 149);
+            this.dgvDetalles.Size = new System.Drawing.Size(1368, 162);
             this.dgvDetalles.TabIndex = 11;
             // 
             // detalleIDDataGridViewTextBoxColumn
@@ -391,7 +390,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1507, 797);
+            this.ClientSize = new System.Drawing.Size(1905, 1042);
             this.Controls.Add(this.dgvDetalles);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.dgvOrdenes);
@@ -404,6 +403,8 @@
             this.Controls.Add(this.cmbClienteOrden);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "frmOrdenes";
             this.Text = "frmOrdenes";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
