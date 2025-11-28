@@ -19,53 +19,66 @@ namespace ProyectoU
 
         private void frmClientes_Load(object sender, EventArgs e)
         {
-            // TODO: esta línea de código carga datos en la tabla 'carClinicBDDataSet.Clientes' Puede moverla o quitarla según sea necesario.
-            this.clientesTableAdapter.Fill(this.carClinicBDDataSet.Clientes);
-
-            try 
+            try
             {
                 this.clientesTableAdapter.Fill(this.carClinicBDDataSet.Clientes);
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error al cargar los datos de clientes: " + ex.Message);
+                MessageBox.Show("Error al cargar la lista: " + ex.Message);
             }
         }
 
         private void btnNuevo_Click(object sender, EventArgs e)
         {
-            this.clientesBindingSource.AddNew();
+            clientesBindingSource.AddNew();
+
+            txtNombre.Text = "";
+            txtApellido.Text = "";
+            txtTelefono.Text = "";
+            txtDireccion.Text = "";
+
             txtNombre.Focus();
         }
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrWhiteSpace(txtNombre.Text))
+            if (txtNombre.Text == "")
             {
                 MessageBox.Show("El nombre es obligatorio.");
                 txtNombre.Focus();
                 return;
             }
+
+            if (txtApellido.Text == "")
+            {
+                MessageBox.Show("El apellido es obligatorio.");
+                txtApellido.Focus();
+                return;
+            }
+
             try
             {
-                DataRowView filaActual = (DataRowView)this.clientesBindingSource.Current;
+                DataRowView filaActual = (DataRowView)clientesBindingSource.Current;
+
                 filaActual["Nombre"] = txtNombre.Text;
                 filaActual["Apellido"] = txtApellido.Text;
                 filaActual["Telefono"] = txtTelefono.Text;
                 filaActual["Direccion"] = txtDireccion.Text;
 
-                this.Validate();
-                this.clientesBindingSource.EndEdit();
-                this.clientesTableAdapter.Update(this.carClinicBDDataSet.Clientes);
+                clientesBindingSource.EndEdit();
 
-                this.clientesTableAdapter.Fill(this.carClinicBDDataSet.Clientes);
+                clientesTableAdapter.Update(carClinicBDDataSet.Clientes);
 
-                MessageBox.Show("Datos guardados exitosamente.");
+                clientesTableAdapter.Fill(carClinicBDDataSet.Clientes);
+
+                MessageBox.Show("Cliente guardado correctamente.");
+
                 btnNuevo_Click(sender, e);
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error al guardar los datos: " + ex.Message);
+                MessageBox.Show("Ocurrió un error al guardar: " + ex.Message);
             }
         }
 
@@ -73,45 +86,30 @@ namespace ProyectoU
         {
             if (dgvClientes.CurrentRow == null)
             {
-                MessageBox.Show("Debe seleccionar un cliente para eliminar.");
+                MessageBox.Show("Seleccione un cliente para eliminar.");
                 return;
             }
 
-            DataRowView filaActual = (DataRowView)this.clientesBindingSource.Current;
-            int clienteID = (int)filaActual["ClienteID"];
+            DialogResult respuesta = MessageBox.Show("¿Está seguro de eliminar este cliente?",
+                                                     "Confirmación",
+                                                     MessageBoxButtons.YesNo,
+                                                     MessageBoxIcon.Question);
 
-            CarClinicBDDataSetTableAdapters.VehiculosTableAdapter vehiculosAdapter =
-                new CarClinicBDDataSetTableAdapters.VehiculosTableAdapter();
-
-            int conteoVehiculos = (int)vehiculosAdapter.GetVehiculoCountByClienteID(clienteID);
-
-            if (conteoVehiculos > 0)
+            if (respuesta == DialogResult.Yes)
             {
-                MessageBox.Show(
-                    "Este cliente no se puede eliminar porque tiene " + conteoVehiculos + " vehículo(s) registrado(s).\n" +
-                    "Por favor, elimine sus vehículos primero.",
-                    "Error de eliminación",
-                    MessageBoxButtons.OK,
-                    MessageBoxIcon.Error);
-            }
-            else
-            {
-                if (MessageBox.Show("¿Está seguro de que desea eliminar este cliente?", "Confirmar eliminación",
-                    MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
+                try { 
+                
+                    clientesBindingSource.RemoveCurrent();
+
+                    clientesTableAdapter.Update(carClinicBDDataSet.Clientes);
+
+                    MessageBox.Show("Cliente eliminado.");
+                }
+                catch (Exception ex)
                 {
-                    try
-                    {
-                        this.clientesBindingSource.RemoveCurrent();
+                    MessageBox.Show("No se pudo eliminar el cliente. Verifique que no tenga vehículos registrados o inténtelo de nuevo.\n\nError: " + ex.Message);
 
-                        this.clientesTableAdapter.Update(this.carClinicBDDataSet.Clientes);
-                        this.clientesTableAdapter.Fill(this.carClinicBDDataSet.Clientes);
-                        MessageBox.Show("Cliente eliminado.");
-                    }
-                    catch (Exception ex)
-                    {
-                        MessageBox.Show("Error al eliminar: " + ex.Message);
-                        this.clientesTableAdapter.Fill(this.carClinicBDDataSet.Clientes);
-                    }
+                    clientesTableAdapter.Fill(carClinicBDDataSet.Clientes);
                 }
             }
         }

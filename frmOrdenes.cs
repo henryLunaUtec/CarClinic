@@ -19,24 +19,14 @@ namespace ProyectoU
 
         private void frmOrdenes_Load(object sender, EventArgs e)
         {
-            // TODO: esta línea de código carga datos en la tabla 'carClinicBDDataSet.DetalleOrden' Puede moverla o quitarla según sea necesario.
-            this.detalleOrdenTableAdapter.Fill(this.carClinicBDDataSet.DetalleOrden);
-            // TODO: esta línea de código carga datos en la tabla 'carClinicBDDataSet.Inventario' Puede moverla o quitarla según sea necesario.
-            this.inventarioTableAdapter.Fill(this.carClinicBDDataSet.Inventario);
-            // TODO: esta línea de código carga datos en la tabla 'carClinicBDDataSet.Ordenes' Puede moverla o quitarla según sea necesario.
-            this.ordenesTableAdapter.Fill(this.carClinicBDDataSet.Ordenes);
-            // TODO: esta línea de código carga datos en la tabla 'carClinicBDDataSet.Vehiculos' Puede moverla o quitarla según sea necesario.
-            this.vehiculosTableAdapter.Fill(this.carClinicBDDataSet.Vehiculos);
-            // TODO: esta línea de código carga datos en la tabla 'carClinicBDDataSet.Clientes' Puede moverla o quitarla según sea necesario.
-            this.clientesTableAdapter.Fill(this.carClinicBDDataSet.Clientes);
             try
             {
-                this.ordenesTableAdapter.Fill(this.carClinicBDDataSet.Ordenes);
-                this.vehiculosTableAdapter.Fill(this.carClinicBDDataSet.Vehiculos);
                 this.clientesTableAdapter.Fill(this.carClinicBDDataSet.Clientes);
-                ////////////////////////////////////////////////////////////////////////
-                this.detalleOrdenTableAdapter.Fill(this.carClinicBDDataSet.DetalleOrden);
+                this.vehiculosTableAdapter.Fill(this.carClinicBDDataSet.Vehiculos);
                 this.inventarioTableAdapter.Fill(this.carClinicBDDataSet.Inventario);
+
+                this.ordenesTableAdapter.Fill(this.carClinicBDDataSet.Ordenes);
+                this.detalleOrdenTableAdapter.Fill(this.carClinicBDDataSet.DetalleOrden);
             }
             catch (Exception ex)
             {
@@ -50,18 +40,13 @@ namespace ProyectoU
             {
                 try
                 {
-                    int clienteIDseleccionado = (int)cmbClienteOrden.SelectedValue;
-
-                    this.vehiculosBindingSource.Filter = "ClienteID = " + clienteIDseleccionado;
+                    int idCliente = Convert.ToInt32(cmbClienteOrden.SelectedValue);
+                    vehiculosBindingSource.Filter = "ClienteID = " + idCliente;
                 }
-                catch (Exception)
+                catch
                 {
-                    this.vehiculosBindingSource.Filter = null;
+                    vehiculosBindingSource.Filter = null;
                 }
-            }
-            else
-            {
-                this.vehiculosBindingSource.Filter = null;
             }
         }
 
@@ -69,56 +54,47 @@ namespace ProyectoU
         {
             if (cmbClienteOrden.SelectedValue == null)
             {
-                MessageBox.Show("Debe seleccionar un cliente.");
-                cmbClienteOrden.Focus();
+                MessageBox.Show("Seleccione el cliente.");
                 return;
             }
 
             if (cmbVehiculoOrden.SelectedValue == null)
             {
-                MessageBox.Show("Debe seleccionar un vehículo.");
-                cmbVehiculoOrden.Focus();
+                MessageBox.Show("Seleccione el vehículo.");
                 return;
             }
 
-            if (string.IsNullOrWhiteSpace(txtDescripcionProblema.Text))
+            if (txtDescripcionProblema.Text == "")
             {
-                MessageBox.Show("Debe ingresar una descripción del problema.");
+                MessageBox.Show("Escriba el problema del carro.");
                 txtDescripcionProblema.Focus();
                 return;
             }
 
             try
             {
-                int vehiculoID = (int)cmbVehiculoOrden.SelectedValue;
+                ordenesBindingSource.AddNew();
+                DataRowView fila = (DataRowView)ordenesBindingSource.Current;
 
-                this.ordenesBindingSource.AddNew();
+                fila["Fecha"] = dtpFechaOrden.Value;
+                fila["DescripcionProblema"] = txtDescripcionProblema.Text;
+                fila["Estado"] = "Pendiente";
 
-                DataRowView filaActual = (DataRowView)this.ordenesBindingSource.Current;
+                int idVehiculo = Convert.ToInt32(cmbVehiculoOrden.SelectedValue);
+                fila["VehiculoID"] = idVehiculo;
 
-                filaActual["Fecha"] = dtpFechaOrden.Value;
-                filaActual["DescripcionProblema"] = txtDescripcionProblema.Text;
-                filaActual["VehiculoID"] = vehiculoID;
+                ordenesBindingSource.EndEdit();
+                ordenesTableAdapter.Update(carClinicBDDataSet.Ordenes);
 
-                filaActual["Estado"] = "Pendiente";
+                ordenesTableAdapter.Fill(carClinicBDDataSet.Ordenes);
 
-                this.Validate();
-                this.ordenesBindingSource.EndEdit();
-                this.ordenesTableAdapter.Update(this.carClinicBDDataSet.Ordenes);
-
-                this.ordenesTableAdapter.Fill(this.carClinicBDDataSet.Ordenes);
-
-                MessageBox.Show("Orden creada exitosamente.");
+                MessageBox.Show("Orden creada.");
 
                 txtDescripcionProblema.Text = "";
-                cmbClienteOrden.SelectedIndex = -1;
-                cmbVehiculoOrden.SelectedIndex = -1;
-                this.vehiculosBindingSource.Filter = null;
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Error al crear la orden: " + ex.Message);
-                this.ordenesTableAdapter.Fill(this.carClinicBDDataSet.Ordenes);
             }
         }
 
@@ -128,84 +104,69 @@ namespace ProyectoU
             {
                 try
                 {
-                    DataRowView filaSeleccionada = (DataRowView)dgvOrdenes.CurrentRow.DataBoundItem;
-                    int ordenIDseleccionada = (int)filaSeleccionada["OrdenID"];
-                    this.detalleOrdenBindingSource.Filter = "OrdenID = " + ordenIDseleccionada;
+                    DataRowView fila = (DataRowView)dgvOrdenes.CurrentRow.DataBoundItem;
+
+                    int idOrden = Convert.ToInt32(fila["OrdenID"]);
+
+                    detalleOrdenBindingSource.Filter = "OrdenID = " + idOrden;
                 }
-                catch (Exception)
+                catch
                 {
-                    this.detalleOrdenBindingSource.Filter = null;
+                    detalleOrdenBindingSource.Filter = null;
                 }
-            }
-            else
-            {
-                this.detalleOrdenBindingSource.Filter = null;
             }
         }
 
         private void btnAgregarRepuesto_Click(object sender, EventArgs e)
         {
-        if (dgvOrdenes.CurrentRow == null)
-                {
-                    MessageBox.Show("Debe seleccionar una orden primero.");
-                    return;
-                }
-
-                if (cmbRepuestos.SelectedValue == null)
-                {
-                    MessageBox.Show("Debe seleccionar un repuesto.");
-                    return;
-                }
-
-                if (numCantidad.Value <= 0)
-                {
-                    MessageBox.Show("La cantidad debe ser mayor a cero.");
-                    return;
-                }
-
-                try
-                {
-                    DataRowView filaOrden = (DataRowView)dgvOrdenes.CurrentRow.DataBoundItem;
-                    int ordenID = (int)filaOrden["OrdenID"];
-
-                    DataRowView filaRepuesto = (DataRowView)cmbRepuestos.SelectedItem;
-                    int repuestoID = (int)filaRepuesto["RepuestoID"];
-                    decimal precioUnitario = (decimal)filaRepuesto["Precio"];
-                    int cantidad = (int)numCantidad.Value;
-
-                    int stockActual = (int)filaRepuesto["Stock"];
-                    if (cantidad > stockActual)
-                    {
-                        MessageBox.Show("No hay suficiente stock. Quedan: " + stockActual);
-                        return;
-                    }
-
-                    this.detalleOrdenTableAdapter.Insert(
-                        ordenID,
-                        repuestoID,
-                        cantidad,
-                        precioUnitario
-                    );
-
-                    filaRepuesto["Stock"] = stockActual - cantidad;
-                    this.inventarioTableAdapter.Update(this.carClinicBDDataSet.Inventario);
-                    this.inventarioTableAdapter.Fill(this.carClinicBDDataSet.Inventario);
-
-                    this.detalleOrdenTableAdapter.Fill(this.carClinicBDDataSet.DetalleOrden);
-
-                    MessageBox.Show("Repuesto agregado a la orden.");
-
-                    cmbRepuestos.SelectedIndex = -1;
-                    numCantidad.Value = 1;
-
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("Error al agregar el repuesto: " + ex.Message);
-
-                    this.inventarioTableAdapter.Fill(this.carClinicBDDataSet.Inventario);
-                    this.detalleOrdenTableAdapter.Fill(this.carClinicBDDataSet.DetalleOrden);
-                }
+            if (dgvOrdenes.CurrentRow == null)
+            {
+                MessageBox.Show("Seleccione una orden de la lista de arriba.");
+                return;
             }
+
+            if (cmbRepuestos.SelectedValue == null)
+            {
+                MessageBox.Show("Seleccione un repuesto.");
+                return;
+            }
+
+            try
+            {
+                DataRowView filaOrden = (DataRowView)dgvOrdenes.CurrentRow.DataBoundItem;
+                int idOrden = Convert.ToInt32(filaOrden["OrdenID"]);
+
+                DataRowView filaRepuesto = (DataRowView)cmbRepuestos.SelectedItem;
+                int idRepuesto = Convert.ToInt32(filaRepuesto["RepuestoID"]);
+                decimal precio = Convert.ToDecimal(filaRepuesto["Precio"]);
+                int stockActual = Convert.ToInt32(filaRepuesto["Stock"]);
+
+                int cantidad = (int)numCantidad.Value;
+
+                if (cantidad > stockActual)
+                {
+                    MessageBox.Show("No hay suficiente stock. Solo quedan: " + stockActual);
+                    return;
+                }
+
+                detalleOrdenTableAdapter.Insert(idOrden, idRepuesto, cantidad, precio);
+
+                int nuevoStock = stockActual - cantidad;
+                filaRepuesto["Stock"] = nuevoStock;
+
+                inventarioTableAdapter.Update(carClinicBDDataSet.Inventario);
+
+                inventarioTableAdapter.Fill(carClinicBDDataSet.Inventario);
+                detalleOrdenTableAdapter.Fill(carClinicBDDataSet.DetalleOrden);
+
+                MessageBox.Show("Repuesto agregado correctamente.");
+
+                numCantidad.Value = 1;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al agregar: " + ex.Message);
+            }
+        }
     }
 }

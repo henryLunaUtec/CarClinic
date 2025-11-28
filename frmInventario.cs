@@ -19,28 +19,30 @@ namespace ProyectoU
 
         private void frmInventario_Load(object sender, EventArgs e)
         {
-            // TODO: esta línea de código carga datos en la tabla 'carClinicBDDataSet.Inventario' Puede moverla o quitarla según sea necesario.
-            this.inventarioTableAdapter.Fill(this.carClinicBDDataSet.Inventario);
-
             try
             {
                 this.inventarioTableAdapter.Fill(this.carClinicBDDataSet.Inventario);
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error al cargar el inventario: " + ex.Message);
+                MessageBox.Show("No se pudo cargar el inventario: " + ex.Message);
             }
         }
 
         private void btnNuevoRepuesto_Click(object sender, EventArgs e)
         {
-            this.inventarioBindingSource.AddNew();
+            inventarioBindingSource.AddNew();
+
+            txtNombreRepuesto.Text = "";
+            txtPrecioRepuesto.Text = "";
+            txtStockRepuesto.Text = "";
+
             txtNombreRepuesto.Focus();
         }
 
         private void btnGuardarRepuesto_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrWhiteSpace(txtNombreRepuesto.Text))
+            if (txtNombreRepuesto.Text == "")
             {
                 MessageBox.Show("El nombre del repuesto es obligatorio.");
                 txtNombreRepuesto.Focus();
@@ -49,50 +51,51 @@ namespace ProyectoU
 
             try
             {
-                DataRowView filaActual = (DataRowView)this.inventarioBindingSource.Current;
-                filaActual["NombreRepuesto"] = txtNombreRepuesto.Text;
+                DataRowView fila = (DataRowView)inventarioBindingSource.Current;
 
-                decimal precio;
-                if (decimal.TryParse(txtPrecioRepuesto.Text, out precio))
+                fila["NombreRepuesto"] = txtNombreRepuesto.Text;
+
+                if (txtPrecioRepuesto.Text != "")
                 {
-                    filaActual["Precio"] = precio;
+                    decimal precio = Convert.ToDecimal(txtPrecioRepuesto.Text);
+                    fila["Precio"] = precio;
                 }
                 else
                 {
-                    MessageBox.Show("El precio debe ser un número válido (ej. 150.50).");
-                    txtPrecioRepuesto.Focus();
-                    this.inventarioBindingSource.CancelEdit();
+                    MessageBox.Show("Debe poner un precio.");
                     return;
                 }
 
-                int stock;
-                if (int.TryParse(txtStockRepuesto.Text, out stock))
+                if (txtStockRepuesto.Text != "")
                 {
-                    filaActual["Stock"] = stock;
+                    int stock = Convert.ToInt32(txtStockRepuesto.Text);
+                    fila["Stock"] = stock;
                 }
                 else
                 {
-                    MessageBox.Show("El stock debe ser un número entero válido (ej. 10).");
-                    txtStockRepuesto.Focus();
-                    this.inventarioBindingSource.CancelEdit();
+                    MessageBox.Show("Debe poner la cantidad (Stock).");
                     return;
                 }
 
-                this.Validate();
-                this.inventarioBindingSource.EndEdit();
-                this.inventarioTableAdapter.Update(this.carClinicBDDataSet.Inventario);
+                inventarioBindingSource.EndEdit();
 
-                this.inventarioTableAdapter.Fill(this.carClinicBDDataSet.Inventario);
+                inventarioTableAdapter.Update(carClinicBDDataSet.Inventario);
 
-                MessageBox.Show("Repuesto guardado exitosamente.");
+                inventarioTableAdapter.Fill(carClinicBDDataSet.Inventario);
+
+                MessageBox.Show("Repuesto guardado.");
 
                 btnNuevoRepuesto_Click(sender, e);
             }
+            catch (FormatException)
+            {
+                MessageBox.Show("Por favor revise los números. El Precio y el Stock deben ser valores numéricos.");
+            }
             catch (Exception ex)
             {
-                MessageBox.Show("Error al guardar el repuesto: " + ex.Message);
-                this.inventarioTableAdapter.Fill(this.carClinicBDDataSet.Inventario);
+                MessageBox.Show("Error al guardar: " + ex.Message);
             }
         }
     }
 }
+// Codigo actualizado al 28/11/2025
