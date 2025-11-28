@@ -98,4 +98,3 @@ namespace ProyectoU
         }
     }
 }
-// Codigo actualizado al 28/11/2025
