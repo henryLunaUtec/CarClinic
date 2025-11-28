@@ -121,7 +121,7 @@ namespace ProyectoU
         {
             if (dgvOrdenes.CurrentRow == null)
             {
-                MessageBox.Show("Seleccione una orden de la lista de arriba.");
+                MessageBox.Show("Seleccione una orden primero.");
                 return;
             }
 
@@ -133,6 +133,8 @@ namespace ProyectoU
 
             try
             {
+                GestorTaller miGestor = new GestorTaller();
+
                 DataRowView filaOrden = (DataRowView)dgvOrdenes.CurrentRow.DataBoundItem;
                 int idOrden = Convert.ToInt32(filaOrden["OrdenID"]);
 
@@ -140,14 +142,17 @@ namespace ProyectoU
                 int idRepuesto = Convert.ToInt32(filaRepuesto["RepuestoID"]);
                 decimal precio = Convert.ToDecimal(filaRepuesto["Precio"]);
                 int stockActual = Convert.ToInt32(filaRepuesto["Stock"]);
-
                 int cantidad = (int)numCantidad.Value;
 
-                if (cantidad > stockActual)
+                bool hayStock = miGestor.ValidarStock(stockActual, cantidad);
+
+                if (hayStock == false)
                 {
-                    MessageBox.Show("No hay suficiente stock. Solo quedan: " + stockActual);
+                    MessageBox.Show("Stock insuficiente. Solo quedan: " + stockActual);
                     return;
                 }
+
+                decimal totalAprox = miGestor.CalcularSubtotal(precio, cantidad);
 
                 detalleOrdenTableAdapter.Insert(idOrden, idRepuesto, cantidad, precio);
 
@@ -159,14 +164,14 @@ namespace ProyectoU
                 inventarioTableAdapter.Fill(carClinicBDDataSet.Inventario);
                 detalleOrdenTableAdapter.Fill(carClinicBDDataSet.DetalleOrden);
 
-                MessageBox.Show("Repuesto agregado correctamente.");
+                MessageBox.Show("Repuesto agregado. Costo estimado de esta línea: $" + totalAprox);
 
                 numCantidad.Value = 1;
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error al agregar: " + ex.Message);
+                MessageBox.Show("Error: " + ex.Message);
             }
         }
-    }
+}
 }

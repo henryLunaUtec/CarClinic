@@ -81,6 +81,7 @@
     <Compile Include="frmVehiculos.Designer.cs">
       <DependentUpon>frmVehiculos.cs</DependentUpon>
     </Compile>
+    <Compile Include="GestorTaller.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="frmClientes.resx">
