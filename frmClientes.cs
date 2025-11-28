@@ -43,19 +43,11 @@ namespace ProyectoU
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-            if (txtNombre.Text == "")
-            {
-                MessageBox.Show("El nombre es obligatorio.");
-                txtNombre.Focus();
-                return;
-            }
+            Validador miValidador = new Validador();
 
-            if (txtApellido.Text == "")
-            {
-                MessageBox.Show("El apellido es obligatorio.");
-                txtApellido.Focus();
-                return;
-            }
+            if (miValidador.EsTextoValido(txtNombre, "Nombre") == false) return;
+            if (miValidador.EsTextoValido(txtApellido, "Apellido") == false) return;
+            if (miValidador.EsTextoValido(txtTelefono, "Teléfono") == false) return;
 
             try
             {
