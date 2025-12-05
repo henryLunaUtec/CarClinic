@@ -166,12 +166,13 @@
             // 
             // btnGuardarVehiculo
             // 
+            this.btnGuardarVehiculo.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.btnGuardarVehiculo.Location = new System.Drawing.Point(739, 78);
             this.btnGuardarVehiculo.Name = "btnGuardarVehiculo";
             this.btnGuardarVehiculo.Size = new System.Drawing.Size(157, 47);
             this.btnGuardarVehiculo.TabIndex = 10;
             this.btnGuardarVehiculo.Text = "Guardar Vehículo";
-            this.btnGuardarVehiculo.UseVisualStyleBackColor = true;
+            this.btnGuardarVehiculo.UseVisualStyleBackColor = false;
             this.btnGuardarVehiculo.Click += new System.EventHandler(this.btnGuardarVehiculo_Click);
             // 
             // dgvVehiculos

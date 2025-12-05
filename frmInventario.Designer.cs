@@ -115,22 +115,24 @@
             // 
             // btnGuardarRepuesto
             // 
+            this.btnGuardarRepuesto.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.btnGuardarRepuesto.Location = new System.Drawing.Point(231, 220);
             this.btnGuardarRepuesto.Name = "btnGuardarRepuesto";
             this.btnGuardarRepuesto.Size = new System.Drawing.Size(122, 41);
             this.btnGuardarRepuesto.TabIndex = 6;
             this.btnGuardarRepuesto.Text = "Guardar";
-            this.btnGuardarRepuesto.UseVisualStyleBackColor = true;
+            this.btnGuardarRepuesto.UseVisualStyleBackColor = false;
             this.btnGuardarRepuesto.Click += new System.EventHandler(this.btnGuardarRepuesto_Click);
             // 
             // btnNuevoRepuesto
             // 
+            this.btnNuevoRepuesto.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.btnNuevoRepuesto.Location = new System.Drawing.Point(67, 220);
             this.btnNuevoRepuesto.Name = "btnNuevoRepuesto";
             this.btnNuevoRepuesto.Size = new System.Drawing.Size(122, 41);
             this.btnNuevoRepuesto.TabIndex = 7;
             this.btnNuevoRepuesto.Text = "Nuevo";
-            this.btnNuevoRepuesto.UseVisualStyleBackColor = true;
+            this.btnNuevoRepuesto.UseVisualStyleBackColor = false;
             this.btnNuevoRepuesto.Click += new System.EventHandler(this.btnNuevoRepuesto_Click);
             // 
             // dgvInventario

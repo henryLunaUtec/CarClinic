@@ -178,12 +178,13 @@
             // 
             // btnCrearOrden
             // 
+            this.btnCrearOrden.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.btnCrearOrden.Location = new System.Drawing.Point(928, 84);
             this.btnCrearOrden.Name = "btnCrearOrden";
             this.btnCrearOrden.Size = new System.Drawing.Size(132, 43);
             this.btnCrearOrden.TabIndex = 8;
             this.btnCrearOrden.Text = "Crear Orden";
-            this.btnCrearOrden.UseVisualStyleBackColor = true;
+            this.btnCrearOrden.UseVisualStyleBackColor = false;
             this.btnCrearOrden.Click += new System.EventHandler(this.btnCrearOrden_Click);
             // 
             // dgvOrdenes
@@ -270,12 +271,13 @@
             // 
             // btnAgregarRepuesto
             // 
+            this.btnAgregarRepuesto.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.btnAgregarRepuesto.Location = new System.Drawing.Point(476, 447);
             this.btnAgregarRepuesto.Name = "btnAgregarRepuesto";
             this.btnAgregarRepuesto.Size = new System.Drawing.Size(158, 44);
             this.btnAgregarRepuesto.TabIndex = 4;
             this.btnAgregarRepuesto.Text = "Agregar Repuesto";
-            this.btnAgregarRepuesto.UseVisualStyleBackColor = true;
+            this.btnAgregarRepuesto.UseVisualStyleBackColor = false;
             this.btnAgregarRepuesto.Click += new System.EventHandler(this.btnAgregarRepuesto_Click);
             // 
             // numCantidad
