@@ -67,6 +67,7 @@
             this.detalleOrdenBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.inventarioTableAdapter = new ProyectoU.CarClinicBDDataSetTableAdapters.InventarioTableAdapter();
             this.detalleOrdenTableAdapter = new ProyectoU.CarClinicBDDataSetTableAdapters.DetalleOrdenTableAdapter();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
             ((System.ComponentModel.ISupportInitialize)(this.clientesBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.carClinicBDDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vehiculosBindingSource)).BeginInit();
@@ -77,12 +78,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.inventarioBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDetalles)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.detalleOrdenBindingSource)).BeginInit();
+            this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(67, 41);
+            this.label1.Location = new System.Drawing.Point(16, 38);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(51, 16);
             this.label1.TabIndex = 0;
@@ -91,7 +93,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(67, 100);
+            this.label2.Location = new System.Drawing.Point(16, 81);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(62, 16);
             this.label2.TabIndex = 1;
@@ -102,7 +104,7 @@
             this.cmbClienteOrden.DataSource = this.clientesBindingSource;
             this.cmbClienteOrden.DisplayMember = "Nombre";
             this.cmbClienteOrden.FormattingEnabled = true;
-            this.cmbClienteOrden.Location = new System.Drawing.Point(137, 37);
+            this.cmbClienteOrden.Location = new System.Drawing.Point(86, 34);
             this.cmbClienteOrden.Name = "cmbClienteOrden";
             this.cmbClienteOrden.Size = new System.Drawing.Size(255, 24);
             this.cmbClienteOrden.TabIndex = 2;
@@ -124,7 +126,7 @@
             this.cmbVehiculoOrden.DataSource = this.vehiculosBindingSource;
             this.cmbVehiculoOrden.DisplayMember = "Placa";
             this.cmbVehiculoOrden.FormattingEnabled = true;
-            this.cmbVehiculoOrden.Location = new System.Drawing.Point(137, 97);
+            this.cmbVehiculoOrden.Location = new System.Drawing.Point(86, 78);
             this.cmbVehiculoOrden.Name = "cmbVehiculoOrden";
             this.cmbVehiculoOrden.Size = new System.Drawing.Size(255, 24);
             this.cmbVehiculoOrden.TabIndex = 3;
@@ -138,7 +140,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(67, 157);
+            this.label3.Location = new System.Drawing.Point(16, 132);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(48, 16);
             this.label3.TabIndex = 4;
@@ -147,7 +149,7 @@
             // dtpFechaOrden
             // 
             this.dtpFechaOrden.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.ordenesBindingSource, "Fecha", true));
-            this.dtpFechaOrden.Location = new System.Drawing.Point(137, 152);
+            this.dtpFechaOrden.Location = new System.Drawing.Point(86, 127);
             this.dtpFechaOrden.Name = "dtpFechaOrden";
             this.dtpFechaOrden.Size = new System.Drawing.Size(255, 22);
             this.dtpFechaOrden.TabIndex = 5;
@@ -160,7 +162,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(67, 217);
+            this.label4.Location = new System.Drawing.Point(377, 21);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(144, 16);
             this.label4.TabIndex = 6;
@@ -168,15 +170,15 @@
             // 
             // txtDescripcionProblema
             // 
-            this.txtDescripcionProblema.Location = new System.Drawing.Point(217, 214);
+            this.txtDescripcionProblema.Location = new System.Drawing.Point(380, 40);
             this.txtDescripcionProblema.Multiline = true;
             this.txtDescripcionProblema.Name = "txtDescripcionProblema";
-            this.txtDescripcionProblema.Size = new System.Drawing.Size(546, 28);
+            this.txtDescripcionProblema.Size = new System.Drawing.Size(421, 108);
             this.txtDescripcionProblema.TabIndex = 7;
             // 
             // btnCrearOrden
             // 
-            this.btnCrearOrden.Location = new System.Drawing.Point(631, 131);
+            this.btnCrearOrden.Location = new System.Drawing.Point(928, 84);
             this.btnCrearOrden.Name = "btnCrearOrden";
             this.btnCrearOrden.Size = new System.Drawing.Size(132, 43);
             this.btnCrearOrden.TabIndex = 8;
@@ -197,7 +199,7 @@
             this.estadoDataGridViewTextBoxColumn,
             this.vehiculoIDDataGridViewTextBoxColumn});
             this.dgvOrdenes.DataSource = this.ordenesBindingSource;
-            this.dgvOrdenes.Location = new System.Drawing.Point(70, 269);
+            this.dgvOrdenes.Location = new System.Drawing.Point(70, 219);
             this.dgvOrdenes.Name = "dgvOrdenes";
             this.dgvOrdenes.RowHeadersWidth = 51;
             this.dgvOrdenes.RowTemplate.Height = 24;
@@ -255,21 +257,20 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.btnAgregarRepuesto);
             this.groupBox1.Controls.Add(this.numCantidad);
             this.groupBox1.Controls.Add(this.label6);
             this.groupBox1.Controls.Add(this.cmbRepuestos);
             this.groupBox1.Controls.Add(this.label5);
-            this.groupBox1.Location = new System.Drawing.Point(70, 457);
+            this.groupBox1.Location = new System.Drawing.Point(70, 405);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(693, 139);
+            this.groupBox1.Size = new System.Drawing.Size(378, 139);
             this.groupBox1.TabIndex = 10;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Detalle de la orden";
             // 
             // btnAgregarRepuesto
             // 
-            this.btnAgregarRepuesto.Location = new System.Drawing.Point(439, 42);
+            this.btnAgregarRepuesto.Location = new System.Drawing.Point(476, 447);
             this.btnAgregarRepuesto.Name = "btnAgregarRepuesto";
             this.btnAgregarRepuesto.Size = new System.Drawing.Size(158, 44);
             this.btnAgregarRepuesto.TabIndex = 4;
@@ -330,7 +331,7 @@
             this.cantidadUsadaDataGridViewTextBoxColumn,
             this.precioUnitarioDataGridViewTextBoxColumn});
             this.dgvDetalles.DataSource = this.detalleOrdenBindingSource;
-            this.dgvDetalles.Location = new System.Drawing.Point(70, 614);
+            this.dgvDetalles.Location = new System.Drawing.Point(70, 582);
             this.dgvDetalles.Name = "dgvDetalles";
             this.dgvDetalles.RowHeadersWidth = 51;
             this.dgvDetalles.RowTemplate.Height = 24;
@@ -386,23 +387,34 @@
             // 
             this.detalleOrdenTableAdapter.ClearBeforeFill = true;
             // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.cmbClienteOrden);
+            this.groupBox2.Controls.Add(this.label1);
+            this.groupBox2.Controls.Add(this.cmbVehiculoOrden);
+            this.groupBox2.Controls.Add(this.label2);
+            this.groupBox2.Controls.Add(this.dtpFechaOrden);
+            this.groupBox2.Controls.Add(this.txtDescripcionProblema);
+            this.groupBox2.Controls.Add(this.label4);
+            this.groupBox2.Controls.Add(this.label3);
+            this.groupBox2.Location = new System.Drawing.Point(70, 25);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(822, 171);
+            this.groupBox2.TabIndex = 12;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Detalles del vehiculo";
+            // 
             // frmOrdenes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1905, 1042);
+            this.ClientSize = new System.Drawing.Size(1505, 818);
+            this.Controls.Add(this.btnAgregarRepuesto);
+            this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.dgvDetalles);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.dgvOrdenes);
             this.Controls.Add(this.btnCrearOrden);
-            this.Controls.Add(this.txtDescripcionProblema);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.dtpFechaOrden);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.cmbVehiculoOrden);
-            this.Controls.Add(this.cmbClienteOrden);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "frmOrdenes";
@@ -420,8 +432,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.inventarioBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDetalles)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.detalleOrdenBindingSource)).EndInit();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -465,5 +478,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn repuestoIDDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn cantidadUsadaDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn precioUnitarioDataGridViewTextBoxColumn;
+        private System.Windows.Forms.GroupBox groupBox2;
     }
 }

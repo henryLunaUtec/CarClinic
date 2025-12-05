@@ -45,15 +45,17 @@
             this.precioDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.stockDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.inventarioTableAdapter = new ProyectoU.CarClinicBDDataSetTableAdapters.InventarioTableAdapter();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
             ((System.ComponentModel.ISupportInitialize)(this.inventarioBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.carClinicBDDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvInventario)).BeginInit();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(67, 33);
+            this.label1.Location = new System.Drawing.Point(12, 36);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(121, 16);
             this.label1.TabIndex = 0;
@@ -62,7 +64,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(67, 78);
+            this.label2.Location = new System.Drawing.Point(12, 84);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(49, 16);
             this.label2.TabIndex = 1;
@@ -71,7 +73,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(67, 129);
+            this.label3.Location = new System.Drawing.Point(12, 127);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(109, 16);
             this.label3.TabIndex = 2;
@@ -80,7 +82,7 @@
             // txtNombreRepuesto
             // 
             this.txtNombreRepuesto.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.inventarioBindingSource, "NombreRepuesto", true));
-            this.txtNombreRepuesto.Location = new System.Drawing.Point(202, 30);
+            this.txtNombreRepuesto.Location = new System.Drawing.Point(147, 33);
             this.txtNombreRepuesto.Name = "txtNombreRepuesto";
             this.txtNombreRepuesto.Size = new System.Drawing.Size(236, 22);
             this.txtNombreRepuesto.TabIndex = 3;
@@ -98,7 +100,7 @@
             // txtPrecioRepuesto
             // 
             this.txtPrecioRepuesto.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.inventarioBindingSource, "Precio", true));
-            this.txtPrecioRepuesto.Location = new System.Drawing.Point(202, 75);
+            this.txtPrecioRepuesto.Location = new System.Drawing.Point(147, 81);
             this.txtPrecioRepuesto.Name = "txtPrecioRepuesto";
             this.txtPrecioRepuesto.Size = new System.Drawing.Size(236, 22);
             this.txtPrecioRepuesto.TabIndex = 4;
@@ -106,14 +108,14 @@
             // txtStockRepuesto
             // 
             this.txtStockRepuesto.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.inventarioBindingSource, "Stock", true));
-            this.txtStockRepuesto.Location = new System.Drawing.Point(202, 126);
+            this.txtStockRepuesto.Location = new System.Drawing.Point(147, 124);
             this.txtStockRepuesto.Name = "txtStockRepuesto";
             this.txtStockRepuesto.Size = new System.Drawing.Size(236, 22);
             this.txtStockRepuesto.TabIndex = 5;
             // 
             // btnGuardarRepuesto
             // 
-            this.btnGuardarRepuesto.Location = new System.Drawing.Point(234, 187);
+            this.btnGuardarRepuesto.Location = new System.Drawing.Point(231, 220);
             this.btnGuardarRepuesto.Name = "btnGuardarRepuesto";
             this.btnGuardarRepuesto.Size = new System.Drawing.Size(122, 41);
             this.btnGuardarRepuesto.TabIndex = 6;
@@ -123,7 +125,7 @@
             // 
             // btnNuevoRepuesto
             // 
-            this.btnNuevoRepuesto.Location = new System.Drawing.Point(70, 187);
+            this.btnNuevoRepuesto.Location = new System.Drawing.Point(67, 220);
             this.btnNuevoRepuesto.Name = "btnNuevoRepuesto";
             this.btnNuevoRepuesto.Size = new System.Drawing.Size(122, 41);
             this.btnNuevoRepuesto.TabIndex = 7;
@@ -143,7 +145,7 @@
             this.precioDataGridViewTextBoxColumn,
             this.stockDataGridViewTextBoxColumn});
             this.dgvInventario.DataSource = this.inventarioBindingSource;
-            this.dgvInventario.Location = new System.Drawing.Point(70, 259);
+            this.dgvInventario.Location = new System.Drawing.Point(67, 290);
             this.dgvInventario.Name = "dgvInventario";
             this.dgvInventario.RowHeadersWidth = 51;
             this.dgvInventario.RowTemplate.Height = 24;
@@ -183,20 +185,30 @@
             // 
             this.inventarioTableAdapter.ClearBeforeFill = true;
             // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.txtNombreRepuesto);
+            this.groupBox1.Controls.Add(this.label1);
+            this.groupBox1.Controls.Add(this.txtPrecioRepuesto);
+            this.groupBox1.Controls.Add(this.label2);
+            this.groupBox1.Controls.Add(this.txtStockRepuesto);
+            this.groupBox1.Controls.Add(this.label3);
+            this.groupBox1.Location = new System.Drawing.Point(67, 31);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(437, 170);
+            this.groupBox1.TabIndex = 9;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Datos inventario";
+            // 
             // frmInventario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1905, 1042);
+            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.dgvInventario);
             this.Controls.Add(this.btnNuevoRepuesto);
             this.Controls.Add(this.btnGuardarRepuesto);
-            this.Controls.Add(this.txtStockRepuesto);
-            this.Controls.Add(this.txtPrecioRepuesto);
-            this.Controls.Add(this.txtNombreRepuesto);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
             this.Name = "frmInventario";
             this.Text = "frmInventario";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
@@ -204,8 +216,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.inventarioBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.carClinicBDDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvInventario)).EndInit();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -227,5 +240,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn nombreRepuestoDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn precioDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn stockDataGridViewTextBoxColumn;
+        private System.Windows.Forms.GroupBox groupBox1;
     }
 }

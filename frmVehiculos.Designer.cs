@@ -52,16 +52,18 @@
             this.clienteIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clientesTableAdapter = new ProyectoU.CarClinicBDDataSetTableAdapters.ClientesTableAdapter();
             this.vehiculosTableAdapter = new ProyectoU.CarClinicBDDataSetTableAdapters.VehiculosTableAdapter();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
             ((System.ComponentModel.ISupportInitialize)(this.clientesBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.carClinicBDDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vehiculosBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvVehiculos)).BeginInit();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(70, 41);
+            this.label1.Location = new System.Drawing.Point(12, 34);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(51, 16);
             this.label1.TabIndex = 0;
@@ -72,7 +74,7 @@
             this.cmbClientes.DataSource = this.clientesBindingSource;
             this.cmbClientes.DisplayMember = "Nombre";
             this.cmbClientes.FormattingEnabled = true;
-            this.cmbClientes.Location = new System.Drawing.Point(140, 37);
+            this.cmbClientes.Location = new System.Drawing.Point(82, 30);
             this.cmbClientes.Name = "cmbClientes";
             this.cmbClientes.Size = new System.Drawing.Size(202, 24);
             this.cmbClientes.TabIndex = 1;
@@ -92,7 +94,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(70, 105);
+            this.label2.Location = new System.Drawing.Point(12, 81);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(45, 16);
             this.label2.TabIndex = 2;
@@ -101,7 +103,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(70, 161);
+            this.label3.Location = new System.Drawing.Point(12, 123);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(48, 16);
             this.label3.TabIndex = 3;
@@ -110,7 +112,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(70, 214);
+            this.label4.Location = new System.Drawing.Point(334, 32);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(56, 16);
             this.label4.TabIndex = 4;
@@ -119,7 +121,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(70, 261);
+            this.label5.Location = new System.Drawing.Point(334, 84);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(34, 16);
             this.label5.TabIndex = 5;
@@ -128,7 +130,7 @@
             // txtPlaca
             // 
             this.txtPlaca.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.vehiculosBindingSource, "Placa", true));
-            this.txtPlaca.Location = new System.Drawing.Point(140, 102);
+            this.txtPlaca.Location = new System.Drawing.Point(82, 78);
             this.txtPlaca.Name = "txtPlaca";
             this.txtPlaca.Size = new System.Drawing.Size(202, 22);
             this.txtPlaca.TabIndex = 6;
@@ -141,7 +143,7 @@
             // txtMarca
             // 
             this.txtMarca.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.vehiculosBindingSource, "MArca", true));
-            this.txtMarca.Location = new System.Drawing.Point(140, 161);
+            this.txtMarca.Location = new System.Drawing.Point(82, 123);
             this.txtMarca.Name = "txtMarca";
             this.txtMarca.Size = new System.Drawing.Size(202, 22);
             this.txtMarca.TabIndex = 7;
@@ -149,7 +151,7 @@
             // txtModelo
             // 
             this.txtModelo.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.vehiculosBindingSource, "Modelo", true));
-            this.txtModelo.Location = new System.Drawing.Point(140, 214);
+            this.txtModelo.Location = new System.Drawing.Point(404, 32);
             this.txtModelo.Name = "txtModelo";
             this.txtModelo.Size = new System.Drawing.Size(202, 22);
             this.txtModelo.TabIndex = 8;
@@ -157,14 +159,14 @@
             // txtAno
             // 
             this.txtAno.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.vehiculosBindingSource, "Ano", true));
-            this.txtAno.Location = new System.Drawing.Point(140, 258);
+            this.txtAno.Location = new System.Drawing.Point(404, 81);
             this.txtAno.Name = "txtAno";
             this.txtAno.Size = new System.Drawing.Size(202, 22);
             this.txtAno.TabIndex = 9;
             // 
             // btnGuardarVehiculo
             // 
-            this.btnGuardarVehiculo.Location = new System.Drawing.Point(443, 233);
+            this.btnGuardarVehiculo.Location = new System.Drawing.Point(739, 78);
             this.btnGuardarVehiculo.Name = "btnGuardarVehiculo";
             this.btnGuardarVehiculo.Size = new System.Drawing.Size(157, 47);
             this.btnGuardarVehiculo.TabIndex = 10;
@@ -186,7 +188,7 @@
             this.anoDataGridViewTextBoxColumn,
             this.clienteIDDataGridViewTextBoxColumn});
             this.dgvVehiculos.DataSource = this.vehiculosBindingSource;
-            this.dgvVehiculos.Location = new System.Drawing.Point(73, 307);
+            this.dgvVehiculos.Location = new System.Drawing.Point(73, 220);
             this.dgvVehiculos.Name = "dgvVehiculos";
             this.dgvVehiculos.RowHeadersWidth = 51;
             this.dgvVehiculos.RowTemplate.Height = 24;
@@ -244,23 +246,33 @@
             // 
             this.vehiculosTableAdapter.ClearBeforeFill = true;
             // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.cmbClientes);
+            this.groupBox1.Controls.Add(this.label1);
+            this.groupBox1.Controls.Add(this.label2);
+            this.groupBox1.Controls.Add(this.txtAno);
+            this.groupBox1.Controls.Add(this.txtPlaca);
+            this.groupBox1.Controls.Add(this.txtModelo);
+            this.groupBox1.Controls.Add(this.label5);
+            this.groupBox1.Controls.Add(this.txtMarca);
+            this.groupBox1.Controls.Add(this.label4);
+            this.groupBox1.Controls.Add(this.label3);
+            this.groupBox1.Location = new System.Drawing.Point(73, 12);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(648, 184);
+            this.groupBox1.TabIndex = 12;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Datos del vehiculo";
+            // 
             // frmVehiculos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1905, 1042);
+            this.ClientSize = new System.Drawing.Size(1611, 550);
+            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.dgvVehiculos);
             this.Controls.Add(this.btnGuardarVehiculo);
-            this.Controls.Add(this.txtAno);
-            this.Controls.Add(this.txtModelo);
-            this.Controls.Add(this.txtMarca);
-            this.Controls.Add(this.txtPlaca);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.cmbClientes);
-            this.Controls.Add(this.label1);
             this.Name = "frmVehiculos";
             this.Text = "frmVehiculos";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
@@ -269,8 +281,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.carClinicBDDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.vehiculosBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvVehiculos)).EndInit();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -299,5 +312,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn modeloDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn anoDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn clienteIDDataGridViewTextBoxColumn;
+        private System.Windows.Forms.GroupBox groupBox1;
     }
 }
