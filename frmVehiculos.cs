@@ -23,12 +23,13 @@ namespace ProyectoU
             {
                 this.clientesTableAdapter.Fill(this.carClinicBDDataSet.Clientes);
                 this.vehiculosTableAdapter.Fill(this.carClinicBDDataSet.Vehiculos);
+
+                vehiculosBindingSource.AddNew();
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Error al cargar los datos: " + ex.Message);
             }
-
         }
 
         private void cmbClientes_SelectedIndexChanged(object sender, EventArgs e)
@@ -59,13 +60,12 @@ namespace ProyectoU
 
             if (cmbClientes.SelectedValue == null)
             {
-                MessageBox.Show("Debe seleccionar un cliente dueño del vehículo.");
+                MessageBox.Show("Debe seleccionar un cliente.");
                 return;
             }
 
             try
             {
-                vehiculosBindingSource.AddNew();
 
                 DataRowView fila = (DataRowView)vehiculosBindingSource.Current;
 
@@ -83,17 +83,14 @@ namespace ProyectoU
                 }
 
                 vehiculosBindingSource.EndEdit();
-
                 vehiculosTableAdapter.Update(carClinicBDDataSet.Vehiculos);
-
                 vehiculosTableAdapter.Fill(carClinicBDDataSet.Vehiculos);
 
                 MessageBox.Show("Vehículo guardado exitosamente.");
 
-                txtPlaca.Text = "";
-                txtMarca.Text = "";
-                txtModelo.Text = "";
-                txtAno.Text = "";
+                vehiculosBindingSource.AddNew();
+
+                txtPlaca.Focus();
             }
             catch (FormatException)
             {
